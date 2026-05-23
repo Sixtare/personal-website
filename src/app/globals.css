@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-dark-bg: #121214;
+  --color-card-bg: #1c1c1f;
+  --color-card-border: #2d2d30;
+  --color-text-dim: #a1a1aa;
+  --color-accent-gray: #27272a;
+  
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background-color: #121214;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tag-pill {
+  background-color: #27272a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #d4d4d8;
+}
+
+.label-column {
+  width: 80px;
+  flex-shrink: 0;
+  color: #71717a;
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.875rem;
+  padding-top: 4px;
+}
+
+.project-card {
+  background: linear-gradient(145deg, rgba(39, 39, 42, 0.4) 0%, rgba(24, 24, 27, 0.4) 100%);
+  border: 1px solid #27272a;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: #3f3f46;
+  background: linear-gradient(145deg, rgba(39, 39, 42, 0.6) 0%, rgba(24, 24, 27, 0.6) 100%);
+}
+
+.nav-blur {
+  background-color: rgba(24, 24, 27, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid #27272a;
+}
+
