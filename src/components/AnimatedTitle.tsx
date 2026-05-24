@@ -1,53 +1,45 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import anime from "animejs";
 
 export default function AnimatedTitle() {
-  const middleNameRef = useRef<HTMLSpanElement>(null);
-  const lettersRef = useRef<HTMLSpanElement[]>([]);
-  const isAnimating = useRef(false);
+  const [typedText, setTypedText] = useState("");
+  const isHovered = useRef(false);
+  const fullName = "Gilla";
+  const textObj = useRef({ length: 0 });
+  const animRef = useRef<anime.AnimeInstance | null>(null);
 
   const onMouseEnter = () => {
-    if (isAnimating.current) return;
+    isHovered.current = true;
+    if (animRef.current) animRef.current.pause();
     
-    anime.timeline({
-      begin: () => { isAnimating.current = true; }
-    })
-    .add({
-      targets: middleNameRef.current,
-      width: [0, 85], // adjust based on length of "Gilla"
-      marginLeft: [0, 10], 
-      duration: 300,
-      easing: 'easeOutQuad'
-    })
-    .add({
-      targets: lettersRef.current,
-      opacity: [0, 1],
-      duration: 50,
+    animRef.current = anime({
+      targets: textObj.current,
+      length: fullName.length,
+      round: 1,
+      duration: 450,
       easing: 'linear',
-      delay: anime.stagger(50)
-    }, '-=150');
+      update: () => {
+        setTypedText(fullName.substring(0, textObj.current.length));
+      }
+    });
   };
 
   const onMouseLeave = () => {
-    anime.timeline({
-      complete: () => { isAnimating.current = false; }
-    })
-    .add({
-      targets: lettersRef.current,
-      opacity: [1, 0],
-      duration: 50,
+    isHovered.current = false;
+    if (animRef.current) animRef.current.pause();
+    
+    animRef.current = anime({
+      targets: textObj.current,
+      length: 0,
+      round: 1,
+      duration: 400,
       easing: 'linear',
-      delay: anime.stagger(30)
-    })
-    .add({
-      targets: middleNameRef.current,
-      width: 0,
-      marginLeft: 0,
-      duration: 200,
-      easing: 'easeInQuad'
-    }, '+=50');
+      update: () => {
+        setTypedText(fullName.substring(0, textObj.current.length));
+      }
+    });
   };
 
   return (
@@ -57,23 +49,14 @@ export default function AnimatedTitle() {
       onMouseLeave={onMouseLeave}
     >
       <span>Matheus</span>
-      <span 
-        ref={middleNameRef}
-        className="overflow-hidden flex items-center w-0 ml-0" 
-      >
-        {"Gilla".split("").map((char, index) => (
-          <span 
-            key={index} 
-            ref={(el) => {
-              if (el) lettersRef.current[index] = el;
-            }}
-            className="opacity-0"
-          >
-            {char}
-          </span>
-        ))}
-      </span>
-      <span className="ml-2.5">Sestare</span>
+      
+      {typedText.length > 0 && (
+        <span className="ml-[10px]">{typedText}</span>
+      )}
+      
+      <span className="animate-blink font-light text-text-dim mx-[4px]">_</span>
+      
+      <span>Sestare</span>
     </h1>
   );
 }

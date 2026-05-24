@@ -34,35 +34,35 @@ export default function Home() {
             {/* Java */}
             <div className="flex items-center gap-2 text-text-dim">
               <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.98 16.516c0 2.21-1.34 4.1-3.32 5.09-1.98.99-4.32.99-6.3 0-1.98-.99-3.32-2.88-3.32-5.09s1.34-4.1 3.32-5.09c1.98-.99 4.32-.99 6.3 0 1.98.99 3.32 2.88 3.32 5.09zM4.14 16.516c0 1.25.75 2.31 1.86 2.87 1.11.56 2.42.56 3.53 0 1.11-.56 1.86-1.62 1.86-2.87s-.75-2.31-1.86-2.87c-1.11-.56-2.42-.56-3.53 0-1.11.56-1.86 1.62-1.86 2.87zM24 16.516c0 2.21-1.34 4.1-3.32 5.09-1.98.99-4.32.99-6.3 0-1.98-.99-3.32-2.88-3.32-5.09s1.34-4.1 3.32-5.09c1.98-.99 4.32-.99 6.3 0 1.98.99 3.32 2.88 3.32 5.09zM15.16 16.516c0 1.25.75 2.31 1.86 2.87 1.11.56 2.42.56 3.53 0 1.11-.56 1.86-1.62 1.86-2.87s-.75-2.31-1.86-2.87c-1.11-.56-2.42-.56-3.53 0-1.11.56-1.86 1.62-1.86 2.87zM12 2.391C12 1.07 13.07 0 14.391 0c1.32 0 2.391 1.07 2.391 2.391s-1.071 2.391-2.391 2.391c-1.321 0-2.391-1.071-2.391-2.391zM7.218 2.391C7.218 1.07 8.288 0 9.609 0c1.32 0 2.391 1.07 2.391 2.391s-1.071 2.391-2.391 2.391c-1.321 0-2.391-1.071-2.391-2.391z"></path></svg>
+                <i className="devicon-java-plain text-3xl"></i>
               </div>
               <span className="text-xs font-medium">Java</span>
             </div>
             {/* Spring */}
             <div className="flex items-center gap-2 text-text-dim">
-              <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.4c5.302 0 9.6 4.298 9.6 9.6S17.302 21.6 12 21.6 2.4 17.302 2.4 12 6.698 2.4 12 2.4zm-1.2 12h2.4v2.4h-2.4v-2.4zm0-7.2h2.4v4.8h-2.4V7.2z"></path></svg>
+              <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">    
+                <i className="devicon-spring-plain text-2xl"></i>
               </div>
               <span className="text-xs font-medium">Spring</span>
             </div>
             {/* Postgres */}
             <div className="flex items-center gap-2 text-text-dim">
               <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+                <i className="devicon-postgresql-plain text-2xl"></i>
               </div>
               <span className="text-xs font-medium">PostgreSQL</span>
             </div>
             {/* Linux */}
             <div className="flex items-center gap-2 text-text-dim">
               <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+                <i className="devicon-archlinux-plain text-2xl"></i>
               </div>
               <span className="text-xs font-medium">Linux</span>
             </div>
             {/* GCP */}
             <div className="flex items-center gap-2 text-text-dim">
               <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>
+                <i className="devicon-googlecloud-plain text-2xl"></i>
               </div>
               <span className="text-xs font-medium">GCP</span>
             </div>
