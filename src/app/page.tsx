@@ -1,38 +1,34 @@
 import Image from "next/image";
+import AnimatedTitle from "../components/AnimatedTitle";
+import AnimatedSection from "../components/AnimatedSection";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-start py-20 px-4 md:px-0 w-full">
       <main className="w-full max-w-2xl mx-auto space-y-12 mb-32" data-purpose="portfolio-container">
-        <header className="flex flex-col items-center text-center space-y-6" data-purpose="profile-section">
+        <AnimatedSection as="header" className="flex flex-col items-center text-center space-y-6" dataPurpose="profile-section" direction="top" delay={0}>
           <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-accent-gray shadow-xl">
             <Image 
               alt="Ewajis Avatar" 
               className="w-full h-full object-cover" 
-              src="./picture.png" 
+              src="/picture.png" 
               fill
               unoptimized
             />
           </div>
-          <h1 className="text-4xl font-bold tracking-tight group flex items-center cursor-default">
-            <span>Matheus</span>
-            <span className="max-w-0 overflow-hidden opacity-0 whitespace-nowrap transition-all duration-500 ease-in-out group-hover:max-w-[150px] group-hover:opacity-100 group-hover:ml-2.5">
-              Gilla
-            </span>
-            <span className="ml-2.5">Sestare</span>
-          </h1>
-        </header>
+          <AnimatedTitle />
+        </AnimatedSection>
 
-        <section className="flex flex-col md:flex-row gap-4" data-purpose="about-section">
+        <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="about-section" direction="left" delay={200}>
           <div className="label-column">/about</div>
           <div className="flex-1 space-y-4 text-text-dim leading-relaxed">
             <p>Olá, me chamo Matheus e estou cursando engenharia de software.</p>
             <p>Curioso e apaixonado por&nbsp;<span className="tag-pill">Tecnologia</span>&nbsp;,<span className="tag-pill">Jogos</span>&nbsp;e&nbsp;<span className="tag-pill">IA</span>&nbsp;.</p>
             <p>Com foco principal no desenvolvimento back-end e no ecossistema Java, gosto de projetar arquiteturas limpas e explorar a integração de APIs com bancos de dados. Além disso, sou um entusiasta do ecossistema Linux, onde encontro a liberdade e o controle ideais para customizar e otimizar meu ambiente de desenvolvimento.</p>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section className="flex flex-col md:flex-row gap-4" data-purpose="stack-section">
+        <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="stack-section" direction="right" delay={400}>
           <div className="label-column">/stack</div>
           <div className="flex-1 flex flex-wrap gap-6 items-center">
             {/* Java */}
@@ -71,9 +67,9 @@ export default function Home() {
               <span className="text-xs font-medium">GCP</span>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
 
-        <section className="flex flex-col md:flex-row gap-4" data-purpose="projects-section">
+        <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="projects-section" direction="bottom" delay={600}>
           <div className="label-column">/projects</div>
           <div className="flex-1 space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -125,7 +121,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
       </main>
 
       <nav className="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-1 p-2 rounded-2xl nav-blur shadow-2xl z-50" data-purpose="floating-nav">
