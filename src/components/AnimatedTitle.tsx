@@ -48,6 +48,7 @@ export default function AnimatedTitle() {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
+      <span className="text-text-dim mr-2">&gt;</span>
       <span>Matheus</span>
       
       {typedText.length > 0 && (

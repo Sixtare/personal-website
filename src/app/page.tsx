@@ -5,123 +5,150 @@ import AnimatedSection from "../components/AnimatedSection";
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-start py-20 px-4 md:px-0 w-full">
-      <main className="w-full max-w-2xl mx-auto space-y-12 mb-32" data-purpose="portfolio-container">
-        <AnimatedSection as="header" className="flex flex-col items-center text-center space-y-6" dataPurpose="profile-section" direction="top" delay={0}>
+      <main className="w-full max-w-5xl mx-auto space-y-12 mb-32" data-purpose="portfolio-container">
+        <AnimatedSection as="header" className="flex flex-col items-center text-center space-y-6 mb-16" dataPurpose="profile-section" direction="top" delay={0}>
           <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-accent-gray shadow-xl">
-            <Image 
+            <img 
               alt="Ewajis Avatar" 
               className="w-full h-full object-cover" 
               src="/picture.png" 
-              fill
-              unoptimized
             />
           </div>
           <AnimatedTitle />
         </AnimatedSection>
 
-        <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="about-section" direction="left" delay={200}>
-          <div className="label-column">/about</div>
-          <div className="flex-1 space-y-4 text-text-dim leading-relaxed">
-            <p>Olá, me chamo Matheus e estou cursando engenharia de software.</p>
-            <p>Curioso e apaixonado por&nbsp;<span className="tag-pill">Tecnologia</span>&nbsp;,<span className="tag-pill">Jogos</span>&nbsp;e&nbsp;<span className="tag-pill">IA</span>&nbsp;.</p>
-            <p>Com foco principal no desenvolvimento back-end e no ecossistema Java, gosto de projetar arquiteturas limpas e explorar a integração de APIs com bancos de dados. Além disso, sou um entusiasta do ecossistema Linux, onde encontro a liberdade e o controle ideais para customizar e otimizar meu ambiente de desenvolvimento.</p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* LEFT COLUMN */}
+          <div className="lg:col-span-7 space-y-16">
+            <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="about-section" direction="left" delay={200}>
+              <div className="label-column">/about</div>
+              <div className="flex-1 space-y-4 text-text-dim leading-relaxed">
+                <p>Olá, me chamo Matheus e estou cursando engenharia de software.</p>
+                <p>Curioso e apaixonado por&nbsp;<span className="tag-pill bg-accent-gray">Tecnologia</span>&nbsp;,<span className="tag-pill bg-accent-gray">Jogos</span>&nbsp;e&nbsp;<span className="tag-pill bg-accent-gray">IA</span>&nbsp;.</p>
+                <p>Com foco principal no desenvolvimento back-end e no ecossistema Java, gosto de projetar arquiteturas limpas e explorar a integração de APIs com bancos de dados. Além disso, sou um entusiasta do ecossistema Linux, onde encontro a liberdade e o controle ideais para customizar e otimizar meu ambiente de desenvolvimento.</p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="projects-section" direction="bottom" delay={600}>
+              <div className="label-column">/projects</div>
+              <div className="flex-1 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <a className="project-card block p-6 rounded-xl relative group" href="#">
+                    <div className="flex justify-between items-start">
+                      <span className="text-xs font-mono text-indigo-400">Video Splicing and Converter</span>
+                      <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
+                        <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mt-2">Chibi Chops</h3>
+                  </a>
+                  
+                  <a className="project-card block p-6 rounded-xl relative group" href="#">
+                    <div className="flex justify-between items-start">
+                      <span className="text-xs font-mono text-pink-400">Steam Helper Discord Bot</span>
+                      <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
+                        <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mt-2">Steam Family Bot</h3>
+                  </a>
+
+                  <a className="project-card block p-6 rounded-xl relative group" href="#">
+                    <div className="flex justify-between items-start">
+                      <span className="text-xs font-mono text-teal-400">Mais projetos felizes</span>
+                      <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
+                        <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mt-2">Projeto Feliz</h3>
+                  </a>
+
+                  <a className="project-card block p-6 rounded-xl relative group" href="#">
+                    <div className="flex justify-between items-start">
+                      <span className="text-xs font-mono text-blue-400">Alguma coisa de IA</span>
+                      <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
+                        <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mt-2">Amo IA me contrate</h3>
+                  </a>
+                </div>
+
+                <div className="flex justify-center pt-4">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-accent-gray text-text-dim text-sm rounded-lg hover:text-white transition-colors border border-transparent hover:border-white/10">
+                    Show more
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
+                  </button>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
-        </AnimatedSection>
 
-        <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="stack-section" direction="right" delay={400}>
-          <div className="label-column">/stack</div>
-          <div className="flex-1 flex flex-wrap gap-6 items-center">
-            {/* Java */}
-            <div className="flex items-center gap-2 text-text-dim">
-              <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <i className="devicon-java-plain text-3xl"></i>
+          {/* RIGHT COLUMN */}
+          <div className="lg:col-span-5 space-y-16">
+            <AnimatedSection className="flex flex-col gap-4" dataPurpose="habilidades-section" direction="right" delay={500}>
+              <div className="label-column">/habilidades</div>
+              <div className="bg-card-bg border border-card-border rounded-xl p-6 space-y-6">
+                <div>
+                  <h4 className="flex items-center gap-2 text-sm font-semibold mb-3">
+                    <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                    Frontend
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="skill-badge">React</span>
+                    <span className="skill-badge">Next.js</span>
+                    <span className="skill-badge">Tailwind CSS</span>
+                    <span className="skill-badge">JavaScript</span>
+                    <span className="skill-badge">TypeScript</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="flex items-center gap-2 text-sm font-semibold mb-3">
+                    <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                    Backend
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="skill-badge">Java</span>
+                    <span className="skill-badge">Spring Boot</span>
+                    <span className="skill-badge">Python</span>
+                    <span className="skill-badge">Node.js</span>
+                    <span className="skill-badge">SQL Server</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="flex items-center gap-2 text-sm font-semibold mb-3">
+                    <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                    DevOps &amp; Cloud
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="skill-badge">GCP</span>
+                    <span className="skill-badge">Docker</span>
+                    <span className="skill-badge">Linux</span>
+                    <span className="skill-badge">Git</span>
+                  </div>
+                </div>
               </div>
-              <span className="text-xs font-medium">Java</span>
-            </div>
-            {/* Spring */}
-            <div className="flex items-center gap-2 text-text-dim">
-              <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">    
-                <i className="devicon-spring-plain text-2xl"></i>
+            </AnimatedSection>
+
+            <AnimatedSection className="flex flex-col gap-4" dataPurpose="educacao-section" direction="right" delay={700}>
+              <div className="label-column">/educação</div>
+              <div className="bg-card-bg border border-card-border rounded-xl p-6 space-y-6">
+                <div>
+                  <h4 className="text-sm font-bold text-white">Engenharia de Software</h4>
+                  <p className="text-xs text-text-dim mt-1">Instituto Nacional de Telecomunicações - Inatel</p>
+                  <p className="text-[10px] text-zinc-600 mt-1 uppercase font-mono">01/2021 — Atual</p>
+                </div>
+                <div className="pt-4 border-t border-card-border">
+                  <h4 className="text-sm font-bold text-white">Técnico em Telecomunicações</h4>
+                  <p className="text-xs text-text-dim mt-1">Escola Técnica de Eletrônica Francisco Moreira da Costa</p>
+                  <p className="text-[10px] text-zinc-600 mt-1 uppercase font-mono">01/2018 — 12/2020</p>
+                </div>
               </div>
-              <span className="text-xs font-medium">Spring</span>
-            </div>
-            {/* Postgres */}
-            <div className="flex items-center gap-2 text-text-dim">
-              <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <i className="devicon-postgresql-plain text-2xl"></i>
-              </div>
-              <span className="text-xs font-medium">PostgreSQL</span>
-            </div>
-            {/* Linux */}
-            <div className="flex items-center gap-2 text-text-dim">
-              <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <i className="devicon-archlinux-plain text-2xl"></i>
-              </div>
-              <span className="text-xs font-medium">Linux</span>
-            </div>
-            {/* GCP */}
-            <div className="flex items-center gap-2 text-text-dim">
-              <div className="w-10 h-10 flex items-center justify-center bg-accent-gray rounded-lg">
-                <i className="devicon-googlecloud-plain text-2xl"></i>
-              </div>
-              <span className="text-xs font-medium">GCP</span>
-            </div>
+            </AnimatedSection>
           </div>
-        </AnimatedSection>
-
-        <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="projects-section" direction="bottom" delay={600}>
-          <div className="label-column">/projects</div>
-          <div className="flex-1 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <a className="project-card block p-6 rounded-xl relative group" href="#">
-                <div className="flex justify-between items-start">
-                  <span className="text-xs font-mono text-indigo-400">Video Splicing and Converter</span>
-                  <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
-                    <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mt-2">Chibi Chops</h3>
-              </a>
-              
-              <a className="project-card block p-6 rounded-xl relative group" href="#">
-                <div className="flex justify-between items-start">
-                  <span className="text-xs font-mono text-pink-400">Steam Helper Discord Bot</span>
-                  <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
-                    <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mt-2">Steam Family Bot</h3>
-              </a>
-
-              <a className="project-card block p-6 rounded-xl relative group" href="#">
-                <div className="flex justify-between items-start">
-                  <span className="text-xs font-mono text-teal-400">Mais projetos felizes</span>
-                  <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
-                    <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mt-2">Projeto Feliz</h3>
-              </a>
-
-              <a className="project-card block p-6 rounded-xl relative group" href="#">
-                <div className="flex justify-between items-start">
-                  <span className="text-xs font-mono text-blue-400">Alguma coisa de IA</span>
-                  <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
-                    <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mt-2">Amo IA me contrate</h3>
-              </a>
-            </div>
-
-            <div className="flex justify-center pt-4">
-              <button className="flex items-center gap-2 px-4 py-2 bg-accent-gray text-text-dim text-sm rounded-lg hover:text-white transition-colors border border-transparent hover:border-white/10">
-                Show more
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
-              </button>
-            </div>
-          </div>
-        </AnimatedSection>
+        </div>
       </main>
 
       <nav className="fixed bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-1 p-2 rounded-2xl nav-blur shadow-2xl z-50" data-purpose="floating-nav">
