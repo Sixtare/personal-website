@@ -25,7 +25,7 @@ export default function Home() {
               <div className="flex-1 space-y-4 text-text-dim leading-relaxed">
                 <p>Olá, me chamo Matheus e estou cursando engenharia de software.</p>
                 <p>Curioso e apaixonado por&nbsp;<span className="tag-pill bg-accent-gray">Tecnologia</span>&nbsp;,<span className="tag-pill bg-accent-gray">Jogos</span>&nbsp;e&nbsp;<span className="tag-pill bg-accent-gray">IA</span>&nbsp;.</p>
-                <p>Com foco principal no desenvolvimento back-end e no ecossistema Java, gosto de projetar arquiteturas limpas e explorar a integração de APIs com bancos de dados. Além disso, sou um entusiasta do ecossistema Linux, onde encontro a liberdade e o controle ideais para customizar e otimizar meu ambiente de desenvolvimento.</p>
+                <p>Com foco principal no desenvolvimento back-end e no ecossistema Java, gosto de projetar arquiteturas limpas e explorar a integração de APIs com bancos de dados.</p>
               </div>
             </AnimatedSection>
 
@@ -55,22 +55,22 @@ export default function Home() {
 
                   <a className="project-card block p-6 rounded-xl relative group" href="#">
                     <div className="flex justify-between items-start">
-                      <span className="text-xs font-mono text-teal-400">Mais projetos felizes</span>
+                      <span className="text-xs font-mono text-teal-400">65c816 Assembly Hacks for SMW</span>
                       <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
                         <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mt-2">Projeto Feliz</h3>
+                    <h3 className="text-xl font-bold mt-2">Smw Assembly Hacks</h3>
                   </a>
 
                   <a className="project-card block p-6 rounded-xl relative group" href="#">
                     <div className="flex justify-between items-start">
-                      <span className="text-xs font-mono text-blue-400">Alguma coisa de IA</span>
+                      <span className="text-xs font-mono text-blue-400">Steam Profile Analytics</span>
                       <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
                         <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mt-2">Amo IA me contrate</h3>
+                    <h3 className="text-xl font-bold mt-2">Steam Stats</h3>
                   </a>
                 </div>
 
@@ -87,11 +87,11 @@ export default function Home() {
           {/* RIGHT COLUMN */}
           <div className="lg:col-span-5 space-y-16">
             <AnimatedSection className="flex flex-col gap-4" dataPurpose="habilidades-section" direction="right" delay={500}>
-              <div className="label-column">/habilidades</div>
+              <div className="label-column">/stack</div>
               <div className="bg-card-bg border border-card-border rounded-xl p-6 space-y-6">
                 <div>
                   <h4 className="flex items-center gap-2 text-sm font-semibold mb-3">
-                    <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                    <span className="w-2 h-2 rounded-full bg-pink-400"></span>
                     Frontend
                   </h4>
                   <div className="flex flex-wrap gap-2">
@@ -105,14 +105,13 @@ export default function Home() {
 
                 <div>
                   <h4 className="flex items-center gap-2 text-sm font-semibold mb-3">
-                    <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span className="w-2 h-2 rounded-full bg-teal-400"></span>
                     Backend
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     <span className="skill-badge">Java</span>
                     <span className="skill-badge">Spring Boot</span>
                     <span className="skill-badge">Python</span>
-                    <span className="skill-badge">Node.js</span>
                     <span className="skill-badge">SQL Server</span>
                   </div>
                 </div>
@@ -133,17 +132,17 @@ export default function Home() {
             </AnimatedSection>
 
             <AnimatedSection className="flex flex-col gap-4" dataPurpose="educacao-section" direction="right" delay={700}>
-              <div className="label-column">/educação</div>
+              <div className="label-column">/education</div>
               <div className="bg-card-bg border border-card-border rounded-xl p-6 space-y-6">
                 <div>
                   <h4 className="text-sm font-bold text-white">Engenharia de Software</h4>
-                  <p className="text-xs text-text-dim mt-1">Instituto Nacional de Telecomunicações - Inatel</p>
-                  <p className="text-[10px] text-zinc-600 mt-1 uppercase font-mono">01/2021 — Atual</p>
+                  <p className="text-xs text-text-dim mt-1">Centro Universitário Leonardo da Vinci - UNIASSELVI</p>
+                  <p className="text-[10px] text-zinc-600 mt-1 uppercase font-mono">01/2026 — Atual</p>
                 </div>
                 <div className="pt-4 border-t border-card-border">
-                  <h4 className="text-sm font-bold text-white">Técnico em Telecomunicações</h4>
-                  <p className="text-xs text-text-dim mt-1">Escola Técnica de Eletrônica Francisco Moreira da Costa</p>
-                  <p className="text-[10px] text-zinc-600 mt-1 uppercase font-mono">01/2018 — 12/2020</p>
+                  <h4 className="text-sm font-bold text-white">Técnico em Eletromecânica</h4>
+                  <p className="text-xs text-text-dim mt-1">Escola Técnica Estadual Santa Cruz </p>
+                  <p className="text-[10px] text-zinc-600 mt-1 uppercase font-mono">01/2011 — 12/2013</p>
                 </div>
               </div>
             </AnimatedSection>
