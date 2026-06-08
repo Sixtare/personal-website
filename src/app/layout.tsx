@@ -13,7 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Matheus Sestare - Fullstack Developer",
+  title: "Matheus Sestare - Developer Portfolio",
   description: "Portfolio",
 };
 
