@@ -11,7 +11,7 @@ export default function Home() {
             <img 
               alt="Avatar" 
               className="w-full h-full object-cover" 
-              src="/picture.png" 
+              src="/picture.webp" 
             />
           </div>
           <AnimatedTitle />
