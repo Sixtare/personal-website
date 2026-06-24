@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import AnimatedTitle from "../components/AnimatedTitle";
 import AnimatedSection from "../components/AnimatedSection";
 
@@ -33,7 +34,7 @@ export default function Home() {
               <div className="flex-1 space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   
-                  <a className="project-card block p-6 rounded-xl relative group" href="https://github.com/Sixtare/steam-stats">
+                  <Link className="project-card block p-6 rounded-xl relative group" href="/projects/steam-stats">
                     <div className="flex justify-between items-start">
                       <span className="text-xs font-mono text-blue-400">Steam Profile Analytics</span>
                       <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
@@ -41,8 +42,8 @@ export default function Home() {
                       </div>
                     </div>
                     <h3 className="text-xl font-bold mt-2">Steam Stats</h3>
-                  </a>
-                   <a className="project-card block p-6 rounded-xl relative group" href="https://github.com/Sixtare/steam-family-bot">
+                  </Link>
+                   <Link className="project-card block p-6 rounded-xl relative group" href="/projects/steam-family-bot">
                     <div className="flex justify-between items-start">
                       <span className="text-xs font-mono text-pink-400">Steam Helper Discord Bot</span>
                       <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
@@ -50,8 +51,8 @@ export default function Home() {
                       </div>
                     </div>
                     <h3 className="text-xl font-bold mt-2">Steam Family Bot</h3>
-                  </a>
-                  <a className="project-card block p-6 rounded-xl relative group" href="https://github.com/Sixtare/smw-65c816-asm">
+                  </Link>
+                  <Link className="project-card block p-6 rounded-xl relative group" href="/projects/smw-assembly-hacks">
                     <div className="flex justify-between items-start">
                       <span className="text-xs font-mono text-teal-400">65c816 Assembly Hacks for SMW</span>
                       <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
@@ -59,8 +60,8 @@ export default function Home() {
                       </div>
                     </div>
                     <h3 className="text-xl font-bold mt-2">Smw Assembly Hacks</h3>
-                  </a>
-                  <a className="project-card block p-6 rounded-xl relative group" href="https://github.com/Sixtare/ChibiChops">
+                  </Link>
+                  <Link className="project-card block p-6 rounded-xl relative group" href="/projects/chibi-chops">
                     <div className="flex justify-between items-start">
                       <span className="text-xs font-mono text-indigo-400">Video Splicing and Converter</span>
                       <div className="p-1 rounded-md border border-white/10 group-hover:bg-white/10">
@@ -68,7 +69,8 @@ export default function Home() {
                       </div>
                     </div>
                     <h3 className="text-xl font-bold mt-2">Chibi Chops</h3>
-                  </a>
+                  </Link>
+
                 </div>
 
                 <div className="flex justify-center pt-4">
