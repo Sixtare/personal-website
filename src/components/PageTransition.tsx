@@ -45,6 +45,9 @@ export default function PageTransition({ children }: { children: React.ReactNode
 
   useEffect(() => {
     if (state.prevChildren) {
+      // Scroll to top immediately when navigation/transition starts
+      window.scrollTo(0, 0);
+
       const duration = 900;
       const easing = "cubicBezier(0.25, 1, 0.5, 1)";
       
@@ -98,7 +101,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       {state.prevChildren && (
         <div 
           ref={prevRef} 
-          className="absolute inset-0 w-full min-h-screen z-10 overflow-hidden"
+          className="absolute inset-x-0 top-0 w-full min-h-screen z-10 overflow-hidden"
           style={{ willChange: "transform, opacity" }}
         >
           {state.prevChildren}
@@ -106,7 +109,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       )}
       <div 
         ref={currentRef} 
-        className={`${state.prevChildren ? 'absolute inset-0' : 'relative'} w-full min-h-screen z-20`}
+        className="relative w-full min-h-screen z-20"
         style={{ 
           transform: state.prevChildren 
             ? `translateX(${state.direction === "forward" ? "100vw" : "-100vw"})` 
