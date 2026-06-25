@@ -86,7 +86,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       {/* Hero Header (Unified size matching steam-stats) */}
       <AnimatedSection as="header" direction="top" delay={200} className="max-w-6xl mx-auto px-6 md:px-20 pt-24 mb-12 text-left">
         <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">
-          /project overview
+          /visão geral do projeto
         </p>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-none">
           {project.title}
@@ -108,7 +108,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         {/* Two-Column Overview */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 items-start">
           <AnimatedSection direction="left" delay={300} className="md:col-span-8 space-y-4">
-            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-2">/About the Project</p>
+            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-2">/sobre o projeto</p>
             <p className="text-xl text-white font-medium italic mb-4 leading-relaxed">
               {project.tagline}
             </p>
@@ -118,7 +118,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </AnimatedSection>
           <AnimatedSection direction="right" delay={500} className="md:col-span-4 space-y-8 bg-[#161616]/50 border border-white/5 rounded-xl p-6">
             <div>
-              <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-3">/Stack</p>
+              <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-3">/tecnologias</p>
               <div className="flex flex-wrap gap-2">
                 {project.stack.map((tech) => (
                   <span
@@ -131,7 +131,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
             </div>
             <div className="border-t border-white/5 pt-4">
-              <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-2">/Role</p>
+              <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-2">/função</p>
               <p className="text-sm text-zinc-300 font-medium">{project.role}</p>
             </div>
           </AnimatedSection>
@@ -140,7 +140,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         {/* Features Bento-inspired Grid */}
         <section className="mb-16">
           <AnimatedSection direction="bottom" delay={400}>
-            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-8">/Features</p>
+            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-8">/funcionalidades</p>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.features.map((feature, idx) => (
@@ -162,7 +162,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         {/* Call to Action */}
         <AnimatedSection as="section" direction="bottom" delay={600} className="text-center py-12 border-t border-white/10">
           <h2 className="text-3xl md:text-4xl text-white mb-8 font-bold tracking-tight">
-            Interessado no projeto?
+            Links do Projeto
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             {project.demoUrl ? (
