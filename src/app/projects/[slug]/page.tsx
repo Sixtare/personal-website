@@ -87,7 +87,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             {/* Main Area */}
-            <div className="flex-1 p-4 md:p-5 bg-[#0a0b0d] flex flex-col justify-between h-full overflow-hidden">
+            <div className="flex-1 p-3 md:p-4 bg-[#0a0b0d] flex flex-col justify-start gap-2 h-full overflow-hidden">
               {/* Profile Card */}
               <div className="relative bg-[#111215] border border-white/10 rounded-xl p-4 overflow-hidden">
                 {/* Faint Red Graph Line in background */}
@@ -312,8 +312,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <div className="flex justify-between items-center px-6 md:px-20 py-6 max-w-6xl mx-auto">
           <Link 
             href="/" 
-            className="font-serif text-2xl md:text-3xl text-white tracking-tighter hover:opacity-85 transition-opacity"
-            style={{ fontFamily: "var(--font-newsreader), serif" }}
+            className="text-2xl font-bold tracking-tight text-white hover:opacity-85 transition-opacity"
           >
             {project.title}
           </Link>
@@ -338,10 +337,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Wide Hero Header for steam-stats */}
       {/* Hero Header (Unified size matching steam-stats) */}
-      <header className="max-w-6xl mx-auto px-6 md:px-20 pt-16 mb-16">
+      <header className="max-w-6xl mx-auto px-6 md:px-20 pt-10 mb-10">
         <div className="relative group w-full">
           <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-transparent blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-          <div className={`relative bg-[#161616] border border-white/10 rounded-2xl overflow-hidden aspect-video w-full flex items-center justify-center ${project.slug === 'steam-stats' ? 'p-0' : 'p-8 md:p-12'}`}>
+          <div className={`relative bg-[#161616] border border-white/10 rounded-2xl overflow-hidden aspect-[21/8] w-full flex items-center justify-center ${project.slug === 'steam-stats' ? 'p-0' : 'p-8 md:p-12'}`}>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)]"></div>
             {renderHeroMockup()}
           </div>
@@ -349,9 +348,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </header>
 
       {/* Main Container */}
-      <main className="max-w-6xl mx-auto px-6 md:px-20 pt-16 pb-32">
+      <main className="max-w-6xl mx-auto px-6 md:px-20 pt-8 pb-20">
         {/* Two-Column Overview */}
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24 items-start">
+        <section className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 items-start">
           <div className="md:col-span-8 space-y-4">
             <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-2">/About the Project</p>
             <p className="text-xl text-white font-medium italic mb-4 leading-relaxed">
@@ -383,7 +382,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </section>
 
         {/* Features Bento-inspired Grid */}
-        <section className="mb-24">
+        <section className="mb-16">
           <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-8">/Features</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.features.map((feature, idx) => (
@@ -404,11 +403,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </section>
 
         {/* Call to Action */}
-        <section className="text-center py-16 border-t border-white/10">
-          <h2 
-            className="text-3xl md:text-4xl text-white mb-8 italic font-serif"
-            style={{ fontFamily: "var(--font-newsreader), serif" }}
-          >
+        <section className="text-center py-12 border-t border-white/10">
+          <h2 className="text-3xl md:text-4xl text-white mb-8 font-bold tracking-tight">
             Interessado no código?
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -431,7 +427,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-16 px-6 bg-[#0a0a0a] border-t border-white/5">
+      <footer className="w-full py-10 px-6 bg-[#0a0a0a] border-t border-white/5">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
           <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">{project.title}</span>
           <p className="text-xs text-zinc-500 opacity-80">© 2026 Matheus Sestare. Built with precision.</p>
