@@ -1,6 +1,7 @@
 "use client";
 
 import { use, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { projects } from "../../../data/projects";
@@ -19,9 +20,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   }
 
   const [leftPosition, setLeftPosition] = useState<string>("1rem");
+  const [mounted, setMounted] = useState(false);
 
   // Dynamically calculate the left position of the back button to center it in the left margin
   useEffect(() => {
+    setMounted(true);
     const handleResize = () => {
       const width = window.innerWidth;
       if (width >= 1200) {
@@ -61,26 +64,29 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <div className="min-h-screen bg-[#121214] text-[#e5e2e1] font-sans selection:bg-white selection:text-black">
       {/* Center Left Back Button */}
-      <div
-        className="fixed top-1/2 -translate-y-1/2 z-50 transition-[left] duration-300"
-        style={{ left: leftPosition }}
-      >
-        <AnimatedSection
-          direction="left"
-          delay={100}
+      {mounted && createPortal(
+        <div
+          className="fixed top-1/2 -translate-y-1/2 z-50 transition-[left] duration-300"
+          style={{ left: leftPosition }}
         >
-          <Link
-            href="/"
-            className="group flex items-center justify-center w-12 h-12 rounded-full border border-card-border bg-dark-bg/80 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-card-bg shadow-lg"
-            aria-label="Voltar para a página principal"
-            title="Voltar para a página principal"
+          <AnimatedSection
+            direction="left"
+            delay={100}
           >
-            <span className="material-symbols-outlined text-text-dim group-hover:text-white transition-transform duration-300 group-hover:-translate-x-1 text-2xl">
-              arrow_back
-            </span>
-          </Link>
-        </AnimatedSection>
-      </div>
+            <Link
+              href="/"
+              className="group flex items-center justify-center w-12 h-12 rounded-full border border-card-border bg-dark-bg/80 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-card-bg shadow-lg"
+              aria-label="Voltar para a página principal"
+              title="Voltar para a página principal"
+            >
+              <span className="material-symbols-outlined text-text-dim group-hover:text-white transition-transform duration-300 group-hover:-translate-x-1 text-2xl">
+                arrow_back
+              </span>
+            </Link>
+          </AnimatedSection>
+        </div>,
+        document.body
+      )}
 
       {/* Wide Hero Header for steam-stats */}
       {/* Hero Header (Unified size matching steam-stats) */}
