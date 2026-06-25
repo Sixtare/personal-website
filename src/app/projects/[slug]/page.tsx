@@ -61,127 +61,127 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         );
       case "steam-stats":
         return (
-          <div className="relative z-10 w-full max-w-2xl bg-[#0b0c0e] rounded-xl shadow-2xl border border-white/10 overflow-hidden text-left flex flex-row h-[280px] font-mono text-[9px] select-none transform group-hover:scale-[1.01] transition-transform duration-500">
+          <div className="absolute inset-0 z-10 bg-[#0b0c0e] text-left flex flex-row font-mono text-[9px] md:text-[10px] select-none">
             {/* Miniature Sidebar */}
-            <div className="w-[80px] bg-[#070809] border-r border-white/10 p-2 flex flex-col justify-between shrink-0">
+            <div className="w-[90px] md:w-[110px] bg-[#070809] border-r border-white/10 p-3 flex flex-col justify-between shrink-0">
               <div className="space-y-4">
-                <div className="font-sans font-bold text-white text-[8px] tracking-wider italic flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 bg-cyan-400 rounded-sm"></span>
+                <div className="font-sans font-bold text-white text-[8px] md:text-[9px] tracking-wider italic flex items-center gap-1.5">
+                  <span className="w-2 h-2 bg-cyan-400 rounded-sm shadow-[0_0_8px_rgba(34,211,238,0.5)]"></span>
                   STEAM STATS
                 </div>
-                <div className="space-y-1.5 text-zinc-500 text-[7px] uppercase font-bold">
-                  <div className="text-cyan-400 bg-white/5 px-1 py-0.5 rounded flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[8px]">dashboard</span> DASHBOARD
+                <div className="space-y-2 text-zinc-500 text-[7px] md:text-[8px] uppercase font-bold">
+                  <div className="text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 px-2 py-1 rounded flex items-center gap-1.5 shadow-[0_0_8px_rgba(6,182,212,0.15)]">
+                    <span className="material-symbols-outlined text-[8px] md:text-[9px]">dashboard</span> DASHBOARD
                   </div>
-                  <div className="px-1 py-0.5 flex items-center gap-1 hover:text-zinc-300 cursor-pointer">
-                    <span className="material-symbols-outlined text-[8px]">menu_book</span> LIBRARY
+                  <div className="px-2 py-1 flex items-center gap-1.5 hover:text-zinc-300 cursor-pointer transition-colors">
+                    <span className="material-symbols-outlined text-[8px] md:text-[9px]">sports_esports</span> LIBRARY
                   </div>
-                  <div className="px-1 py-0.5 flex items-center gap-1 hover:text-zinc-300 cursor-pointer">
-                    <span className="material-symbols-outlined text-[8px]">compare_arrows</span> COMPARE
+                  <div className="px-2 py-1 flex items-center gap-1.5 hover:text-zinc-300 cursor-pointer transition-colors">
+                    <span className="material-symbols-outlined text-[8px] md:text-[9px]">compare_arrows</span> COMPARE
                   </div>
                 </div>
               </div>
-              <div className="border border-white/10 rounded p-1 text-center text-zinc-600 hover:text-white hover:border-white/20 transition-all cursor-pointer">
+              <div className="border border-white/10 rounded-lg py-1.5 text-center text-zinc-500 hover:text-white hover:border-white/20 transition-all cursor-pointer font-bold text-[7px] md:text-[8px]">
                 NEW ANLS
               </div>
             </div>
 
             {/* Main Area */}
-            <div className="flex-1 p-3 overflow-y-auto space-y-3 bg-[#0a0b0d]">
+            <div className="flex-1 p-4 md:p-5 bg-[#0a0b0d] flex flex-col justify-between h-full overflow-hidden">
               {/* Profile Card */}
-              <div className="relative bg-[#111215] border border-white/10 rounded-lg p-2.5 overflow-hidden">
+              <div className="relative bg-[#111215] border border-white/10 rounded-xl p-4 overflow-hidden">
                 {/* Faint Red Graph Line in background */}
-                <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none w-24 h-8">
+                <div className="absolute right-0 bottom-0 opacity-15 pointer-events-none w-32 h-12">
                   <svg className="w-full h-full text-red-500" viewBox="0 0 100 30" fill="none">
-                    <path d="M0,25 L15,20 L30,28 L45,15 L60,22 L75,5 L90,12 L100,2" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M0,25 L15,20 L30,28 L45,15 L60,22 L75,5 L90,12 L100,2" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
 
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-400/30 overflow-hidden">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-cyan-500/20 border border-cyan-400/30 overflow-hidden shrink-0">
                       <img src="https://avatars.githubusercontent.com/u/24908823?v=4" alt="SIX" className="w-full h-full object-cover" />
                     </div>
                     <div>
-                      <div className="font-bold text-white text-[10px] flex items-center gap-1">
+                      <div className="font-bold text-white text-[12px] md:text-[13px] flex items-center gap-1.5">
                         SIX
-                        <span className="bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 text-[6px] px-1 rounded-sm font-sans font-bold">LVL 19</span>
+                        <span className="bg-yellow-500/15 text-yellow-400 border border-yellow-500/30 text-[8px] md:text-[9px] px-1 rounded font-sans font-bold">LVL 19</span>
                       </div>
-                      <div className="text-zinc-500 text-[6px] uppercase font-bold tracking-wider">STEAM USER • GAMER</div>
+                      <div className="text-zinc-500 text-[8px] md:text-[9px] uppercase font-bold tracking-wider">STEAM USER • GAMER</div>
                     </div>
                   </div>
-                  <span className="text-[7px] text-emerald-400 border border-emerald-500/30 bg-emerald-500/5 px-1 py-0.5 rounded">STATUS: DECRYPTED</span>
+                  <span className="text-[8px] md:text-[9px] text-emerald-400 border border-emerald-500/30 bg-emerald-500/5 px-1.5 py-0.5 rounded font-bold">STATUS: DECRYPTED</span>
                 </div>
 
                 {/* Metrics Grid */}
-                <div className="grid grid-cols-4 gap-1.5 text-center">
-                  <div className="bg-[#18191d] p-1 rounded border border-white/5">
-                    <div className="text-zinc-500 text-[6px] uppercase">Playtime</div>
-                    <div className="text-white font-bold text-[8px] mt-0.5">14,303 HRS</div>
+                <div className="grid grid-cols-4 gap-3 text-center">
+                  <div className="bg-[#18191d]/85 p-2 rounded-lg border border-white/5">
+                    <div className="text-zinc-500 text-[8px] md:text-[9px] uppercase">Playtime</div>
+                    <div className="text-white font-bold text-[12px] md:text-[13px] mt-0.5">14,303 HRS</div>
                   </div>
-                  <div className="bg-[#18191d] p-1 rounded border border-white/5">
-                    <div className="text-zinc-500 text-[6px] uppercase">Collection</div>
-                    <div className="text-white font-bold text-[8px] mt-0.5">197 GAMES</div>
+                  <div className="bg-[#18191d]/85 p-2 rounded-lg border border-white/5">
+                    <div className="text-zinc-500 text-[8px] md:text-[9px] uppercase">Collection</div>
+                    <div className="text-white font-bold text-[12px] md:text-[13px] mt-0.5">197 GAMES</div>
                   </div>
-                  <div className="bg-[#18191d] p-1 rounded border border-white/5">
-                    <div className="text-zinc-500 text-[6px] uppercase">Service Medal</div>
-                    <div className="text-white font-bold text-[8px] mt-0.5">12 YEARS</div>
+                  <div className="bg-[#18191d]/85 p-2 rounded-lg border border-white/5">
+                    <div className="text-zinc-500 text-[8px] md:text-[9px] uppercase">Service Medal</div>
+                    <div className="text-white font-bold text-[12px] md:text-[13px] mt-0.5">12 YEARS</div>
                   </div>
-                  <div className="bg-[#18191d] p-1 rounded border border-cyan-500/20">
-                    <div className="text-cyan-400 text-[6px] uppercase">Value</div>
-                    <div className="text-cyan-400 font-bold text-[8px] mt-0.5">$2,506.19 EST</div>
+                  <div className="bg-[#18191d]/85 p-2 rounded-lg border border-cyan-500/20">
+                    <div className="text-cyan-400 text-[8px] md:text-[9px] uppercase">Value</div>
+                    <div className="text-cyan-400 font-bold text-[12px] md:text-[13px] mt-0.5">$2,506.19 EST</div>
                   </div>
                 </div>
               </div>
 
               {/* Lower Section (Genre Ecosystem and Titan Hours) */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-4">
                 {/* Genre Ecosystem */}
-                <div className="bg-[#111215] border border-white/5 rounded-lg p-2.5">
-                  <div className="text-zinc-400 text-[7px] font-bold uppercase mb-2 flex items-center justify-between border-b border-white/5 pb-1">
+                <div className="bg-[#111215] border border-white/5 rounded-xl p-4">
+                  <div className="text-zinc-400 text-[9px] md:text-[10px] font-bold uppercase mb-3 flex items-center justify-between border-b border-white/5 pb-1.5">
                     <span>Genre Ecosystem</span>
-                    <span className="text-zinc-600 text-[6px]">TOP 10 TAGS</span>
+                    <span className="text-zinc-600 text-[8px]">TOP 10 TAGS</span>
                   </div>
-                  <div className="flex items-center justify-between gap-1">
-                    {/* Fake Donut Chart */}
-                    <div className="relative w-10 h-10 rounded-full border-4 border-zinc-800 flex items-center justify-center shrink-0">
+                  <div className="flex items-center justify-between gap-3">
+                    {/* Donut Chart */}
+                    <div className="relative w-16 h-16 rounded-full border-4 border-zinc-800 flex items-center justify-center shrink-0">
                       <div className="absolute inset-0 rounded-full border-4 border-cyan-500 border-t-transparent border-r-transparent animate-spin-slow"></div>
                       <div className="absolute inset-0.5 rounded-full border-4 border-purple-500 border-b-transparent border-l-transparent"></div>
-                      <span className="text-[5px] text-zinc-500">TAGS</span>
+                      <span className="text-[7px] text-zinc-500 uppercase font-bold">Tags</span>
                     </div>
                     {/* Legend (selected top genres) */}
-                    <div className="flex-1 space-y-0.5 text-[6px] text-zinc-400">
-                      <div className="flex items-center justify-between"><span className="flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-cyan-400"></span> ACTION</span><span className="text-zinc-500">131</span></div>
-                      <div className="flex items-center justify-between"><span className="flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-purple-400"></span> ADVENTURE</span><span className="text-zinc-500">109</span></div>
-                      <div className="flex items-center justify-between"><span className="flex items-center gap-1"><span className="w-1 h-1 rounded-full bg-pink-400"></span> INDIE</span><span className="text-zinc-500">82</span></div>
+                    <div className="flex-1 space-y-1 text-[8px] md:text-[9px] text-zinc-400">
+                      <div className="flex items-center justify-between"><span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> ACTION</span><span className="text-zinc-500 font-bold">131</span></div>
+                      <div className="flex items-center justify-between"><span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span> ADVENTURE</span><span className="text-zinc-500 font-bold">109</span></div>
+                      <div className="flex items-center justify-between"><span className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 rounded-full bg-pink-400"></span> INDIE</span><span className="text-zinc-500 font-bold">82</span></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Titan Hours */}
-                <div className="bg-[#111215] border border-white/5 rounded-lg p-2.5">
-                  <div className="text-zinc-400 text-[7px] font-bold uppercase mb-2 flex items-center justify-between border-b border-white/5 pb-1">
+                <div className="bg-[#111215] border border-white/5 rounded-xl p-4">
+                  <div className="text-zinc-400 text-[9px] md:text-[10px] font-bold uppercase mb-3 flex items-center justify-between border-b border-white/5 pb-1.5">
                     <span>Titan Hours</span>
-                    <span className="text-zinc-600 text-[6px]">LIFETIME</span>
+                    <span className="text-zinc-600 text-[8px]">LIFETIME</span>
                   </div>
-                  <div className="space-y-1.5">
+                  <div className="space-y-3">
                     {/* FFXIV */}
                     <div>
-                      <div className="flex justify-between text-[6px] text-zinc-400 mb-0.5">
-                        <span className="truncate max-w-[80px]">FINAL FANTASY XIV</span>
+                      <div className="flex justify-between text-[8px] md:text-[9px] text-zinc-400 mb-1">
+                        <span className="truncate max-w-[120px] font-semibold text-zinc-300">FINAL FANTASY XIV</span>
                         <span className="text-white font-bold">8,130h</span>
                       </div>
-                      <div className="w-full bg-[#18191d] h-1 rounded-full overflow-hidden">
-                        <div className="bg-gradient-to-r from-blue-500 to-cyan-500 h-full w-[85%]"></div>
+                      <div className="w-full bg-[#18191d] h-2 rounded-full overflow-hidden">
+                        <div className="bg-gradient-to-r from-blue-500 to-cyan-500 h-full w-[85%] shadow-[0_0_6px_rgba(6,182,212,0.4)]"></div>
                       </div>
                     </div>
                     {/* CS2 */}
                     <div>
-                      <div className="flex justify-between text-[6px] text-zinc-400 mb-0.5">
-                        <span className="truncate max-w-[80px]">Counter-Strike 2</span>
+                      <div className="flex justify-between text-[8px] md:text-[9px] text-zinc-400 mb-1">
+                        <span className="truncate max-w-[120px] font-semibold text-zinc-300">Counter-Strike 2</span>
                         <span className="text-white font-bold">924h</span>
                       </div>
-                      <div className="w-full bg-[#18191d] h-1 rounded-full overflow-hidden">
+                      <div className="w-full bg-[#18191d] h-2 rounded-full overflow-hidden">
                         <div className="bg-gradient-to-r from-purple-500 to-indigo-500 h-full w-[25%]"></div>
                       </div>
                     </div>
@@ -190,49 +190,43 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Recent Activity */}
-              <div className="bg-[#111215] border border-white/5 rounded-lg p-2.5">
-                <div className="text-zinc-400 text-[7px] font-bold uppercase mb-2 flex items-center justify-between border-b border-white/5 pb-1">
+              <div className="bg-[#111215] border border-white/5 rounded-xl p-4">
+                <div className="text-zinc-400 text-[9px] md:text-[10px] font-bold uppercase mb-3 flex items-center justify-between border-b border-white/5 pb-1.5">
                   <span>Recent Activity (Last 2 Weeks)</span>
-                  <span className="text-zinc-600 text-[6px]">14d TREND</span>
+                  <span className="text-zinc-600 text-[8px]">14d TREND</span>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="space-y-1.5">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-3">
                     <div>
-                      <div className="flex justify-between text-[6px] text-zinc-400">
+                      <div className="flex justify-between text-[8px] md:text-[9px] text-zinc-400">
                         <span>Path of Exile 2</span>
-                        <span className="text-cyan-400">68.8h</span>
+                        <span className="text-cyan-400 font-bold">68.8h</span>
                       </div>
-                      <div className="w-full bg-[#18191d] h-1 rounded-full overflow-hidden mt-0.5">
-                        <div className="bg-cyan-500 h-full w-[80%]"></div>
+                      <div className="w-full bg-[#18191d] h-2 rounded-full overflow-hidden mt-1">
+                        <div className="bg-cyan-500 h-full w-[80%] shadow-[0_0_6px_rgba(6,182,212,0.4)]"></div>
                       </div>
                     </div>
                     <div>
-                      <div className="flex justify-between text-[6px] text-zinc-400">
+                      <div className="flex justify-between text-[8px] md:text-[9px] text-zinc-400">
                         <span>FINAL FANTASY XIV</span>
-                        <span className="text-purple-400">52.6h</span>
+                        <span className="text-purple-400 font-bold">52.6h</span>
                       </div>
-                      <div className="w-full bg-[#18191d] h-1 rounded-full overflow-hidden mt-0.5">
+                      <div className="w-full bg-[#18191d] h-2 rounded-full overflow-hidden mt-1">
                         <div className="bg-purple-500 h-full w-[60%]"></div>
                       </div>
                     </div>
                   </div>
                   {/* Recent Ecosystem composition bar */}
                   <div className="flex flex-col justify-center">
-                    <div className="text-[5px] text-zinc-500 mb-1">RECENT COMPOSITION</div>
-                    <div className="w-full h-2 rounded bg-[#18191d] flex overflow-hidden border border-white/5">
+                    <div className="text-[7px] md:text-[8px] text-zinc-500 mb-1.5 font-bold">RECENT COMPOSITION</div>
+                    <div className="w-full h-3.5 rounded-md bg-[#18191d] flex overflow-hidden border border-white/5">
                       <div className="bg-cyan-500 w-[56%]" title="PoE2"></div>
                       <div className="bg-purple-500 w-[43%]" title="FFXIV"></div>
                       <div className="bg-teal-500 w-[1%]" title="Other"></div>
                     </div>
-                    <div className="text-[5px] text-zinc-600 mt-1 uppercase">121.9 Total Hours</div>
+                    <div className="text-[7px] text-zinc-600 mt-1.5 uppercase font-bold">121.9 Total Hours</div>
                   </div>
                 </div>
-              </div>
-
-              {/* Status footer line */}
-              <div className="text-zinc-700 text-[6px] pt-1 flex justify-between uppercase">
-                <span>2026 STEAM_STATS_INTEL // ENCRYPTION: ACTIVE</span>
-                <span>SYSTEM_STATUS: STABLE</span>
               </div>
             </div>
           </div>
@@ -342,35 +336,27 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </nav>
 
-      {/* Main Container */}
-      <main className="max-w-4xl mx-auto px-6 md:px-12 pt-16 pb-32">
-        {/* Hero Section */}
-        <header className="mb-24">
-          <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-4">/Project Overview</p>
-          <h1 
-            className="text-5xl md:text-7xl text-white mb-6 leading-none tracking-tight font-serif"
-            style={{ fontFamily: "var(--font-newsreader), serif" }}
-          >
-            {project.title}
-          </h1>
-          <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-12 italic">
-            {project.tagline}
-          </p>
-
-          {/* Hero Visual Mockup Container */}
-          <div className="relative group w-full">
-            <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-transparent blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-            <div className="relative bg-[#161616] border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-[21/9] flex items-center justify-center p-8 md:p-12">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)]"></div>
-              {renderHeroMockup()}
-            </div>
+      {/* Wide Hero Header for steam-stats */}
+      {/* Hero Header (Unified size matching steam-stats) */}
+      <header className="max-w-6xl mx-auto px-6 md:px-20 pt-16 mb-16">
+        <div className="relative group w-full">
+          <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-transparent blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+          <div className={`relative bg-[#161616] border border-white/10 rounded-2xl overflow-hidden aspect-video w-full flex items-center justify-center ${project.slug === 'steam-stats' ? 'p-0' : 'p-8 md:p-12'}`}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_0%,transparent_100%)]"></div>
+            {renderHeroMockup()}
           </div>
-        </header>
+        </div>
+      </header>
 
+      {/* Main Container */}
+      <main className="max-w-6xl mx-auto px-6 md:px-20 pt-16 pb-32">
         {/* Two-Column Overview */}
         <section className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-24 items-start">
           <div className="md:col-span-8 space-y-4">
             <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-2">/About the Project</p>
+            <p className="text-xl text-white font-medium italic mb-4 leading-relaxed">
+              {project.tagline}
+            </p>
             <p className="text-lg text-zinc-300 leading-relaxed text-pretty font-light">
               {project.longDescription}
             </p>
