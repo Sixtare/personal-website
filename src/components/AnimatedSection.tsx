@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef, useState, ReactNode } from "react";
 import anime from "animejs";
 
 interface AnimatedSectionProps {
@@ -21,21 +21,24 @@ export default function AnimatedSection({
   as: Tag = "section"
 }: AnimatedSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isAnimated, setIsAnimated] = useState(false);
 
   let initialTransform = "";
-  switch (direction) {
-    case "left":
-      initialTransform = "translateX(-50px)";
-      break;
-    case "right":
-      initialTransform = "translateX(50px)";
-      break;
-    case "top":
-      initialTransform = "translateY(-50px)";
-      break;
-    case "bottom":
-      initialTransform = "translateY(50px)";
-      break;
+  if (!isAnimated) {
+    switch (direction) {
+      case "left":
+        initialTransform = "translateX(-50px)";
+        break;
+      case "right":
+        initialTransform = "translateX(50px)";
+        break;
+      case "top":
+        initialTransform = "translateY(-50px)";
+        break;
+      case "bottom":
+        initialTransform = "translateY(50px)";
+        break;
+    }
   }
 
   useEffect(() => {
@@ -45,6 +48,9 @@ export default function AnimatedSection({
       easing: "easeOutExpo",
       duration: 1000,
       delay: delay,
+      complete: () => {
+        setIsAnimated(true);
+      }
     };
 
     if (direction === "left" || direction === "right") {
@@ -62,7 +68,7 @@ export default function AnimatedSection({
     <Tag 
       ref={sectionRef} 
       className={className}
-      style={{
+      style={isAnimated ? {} : {
         opacity: 0,
         transform: initialTransform,
         willChange: "transform, opacity"

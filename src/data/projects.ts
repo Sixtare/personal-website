@@ -30,6 +30,7 @@ export const projects: Record<string, ProjectData> = {
     stack: ["Java 25", "Spring Boot 4.0.6", "PostgreSQL", "Next.js 16.2.6", "TypeScript 5", "Tailwind CSS 4", "Docker", "Steam Web API", "SteamSpy API", "Kaggle Dataset"],
     githubUrl: "https://github.com/Sixtare/steam-stats",
     heroType: "steam-stats",
+    imageUrl: "/steamstats.png",
     features: [
       {
         title: "Dashboard de Perfil",
@@ -58,7 +59,7 @@ export const projects: Record<string, ProjectData> = {
     stack: ["Java 21", "JDA 6.4.1", "SQLite", "HikariCP", "JDBI", "Steam Web API", "Maven", "Discord OAuth2"],
     githubUrl: "https://github.com/Sixtare/steam-family-bot",
     heroType: "steam-family-bot",
-    imageUrl: "https://raw.githubusercontent.com/Sixtare/steam-family-bot/master/resources/preview.png",
+    imageUrl: "/familybot.png",
     features: [
       {
         title: "Notificações em Tempo Real",
@@ -87,6 +88,7 @@ export const projects: Record<string, ProjectData> = {
     stack: ["65c816 Assembly", "Asar Assembler", "SNES Architecture", "UberASM", "Lunar Magic", "Snes9x Debugger"],
     githubUrl: "https://github.com/Sixtare/smw-65c816-asm",
     heroType: "smw-assembly-hacks",
+    imageUrl: "/smwhacks.png",
     features: [
       {
         title: "Mecânicas Inéditas",
@@ -115,6 +117,7 @@ export const projects: Record<string, ProjectData> = {
     stack: ["Java 17+", "Maven", "FFmpeg Wrapper", "FFprobe", "vlcj (VLC 3.x)", "JavaFX", "Multi-platform"],
     githubUrl: "https://github.com/Sixtare/ChibiChops",
     heroType: "chibi-chops",
+    imageUrl: "/chibichops.png",
     features: [
       {
         title: "Cortes sem Perda (Trim)",
