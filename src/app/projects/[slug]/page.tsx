@@ -306,38 +306,37 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#e5e2e1] font-sans selection:bg-white selection:text-black">
-      {/* Top Navigation Bar */}
-      <nav className="w-full top-0 left-0 bg-[#0a0a0a]/80 backdrop-blur-md z-40 border-b border-white/5">
-        <div className="flex justify-between items-center px-6 md:px-20 py-6 max-w-6xl mx-auto">
+    <div className="min-h-screen bg-[#121214] text-[#e5e2e1] font-sans selection:bg-white selection:text-black">
+      {/* Floating Back Button */}
+      <div className="fixed top-6 left-6 md:left-10 z-50">
+        <AnimatedSection 
+          direction="left" 
+          delay={100}
+        >
           <Link 
-            href="/" 
-            className="text-2xl font-bold tracking-tight text-white hover:opacity-85 transition-opacity"
+            href="/"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-black/60 border border-white/10 text-white backdrop-blur-md hover:bg-white/15 hover:border-white/20 transition-all duration-300 group shadow-lg"
+            title="Voltar para a página principal"
           >
-            {project.title}
+            <span className="material-symbols-outlined text-lg transition-transform duration-300 group-hover:-translate-x-0.5">
+              arrow_back
+            </span>
           </Link>
-          <div className="flex gap-4">
-            <a 
-              href={project.githubUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="material-symbols-outlined text-white hover:text-white/70 transition-colors cursor-pointer"
-            >
-              code
-            </a>
-            <Link 
-              href="/" 
-              className="material-symbols-outlined text-white hover:text-white/70 transition-colors"
-            >
-              home
-            </Link>
-          </div>
-        </div>
-      </nav>
+        </AnimatedSection>
+      </div>
 
       {/* Wide Hero Header for steam-stats */}
       {/* Hero Header (Unified size matching steam-stats) */}
-      <header className="max-w-6xl mx-auto px-6 md:px-20 pt-10 mb-10">
+      <AnimatedSection as="header" direction="top" delay={200} className="max-w-6xl mx-auto px-6 md:px-20 pt-24 mb-12 text-left">
+        <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">
+          /project overview
+        </p>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-4 leading-none">
+          {project.title}
+        </h1>
+        <p className="text-zinc-400 text-lg md:text-xl font-light mb-8 max-w-2xl">
+          {project.subtitle}
+        </p>
         <div className="relative group w-full">
           <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-transparent blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
           <div className={`relative bg-[#161616] border border-white/10 rounded-2xl overflow-hidden aspect-[21/8] w-full flex items-center justify-center ${project.slug === 'steam-stats' ? 'p-0' : 'p-8 md:p-12'}`}>
@@ -345,13 +344,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             {renderHeroMockup()}
           </div>
         </div>
-      </header>
+      </AnimatedSection>
 
       {/* Main Container */}
       <main className="max-w-6xl mx-auto px-6 md:px-20 pt-8 pb-20">
         {/* Two-Column Overview */}
-        <section className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 items-start">
-          <div className="md:col-span-8 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 items-start">
+          <AnimatedSection direction="left" delay={300} className="md:col-span-8 space-y-4">
             <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-2">/About the Project</p>
             <p className="text-xl text-white font-medium italic mb-4 leading-relaxed">
               {project.tagline}
@@ -359,8 +358,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <p className="text-lg text-zinc-300 leading-relaxed text-pretty font-light">
               {project.longDescription}
             </p>
-          </div>
-          <div className="md:col-span-4 space-y-8 bg-[#161616]/50 border border-white/5 rounded-xl p-6">
+          </AnimatedSection>
+          <AnimatedSection direction="right" delay={500} className="md:col-span-4 space-y-8 bg-[#161616]/50 border border-white/5 rounded-xl p-6">
             <div>
               <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-3">/Stack</p>
               <div className="flex flex-wrap gap-2">
@@ -378,18 +377,20 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-2">/Role</p>
               <p className="text-sm text-zinc-300 font-medium">{project.role}</p>
             </div>
-          </div>
-        </section>
+          </AnimatedSection>
+        </div>
 
         {/* Features Bento-inspired Grid */}
         <section className="mb-16">
-          <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-8">/Features</p>
+          <AnimatedSection direction="bottom" delay={400}>
+            <p className="text-xs text-zinc-500 font-mono uppercase tracking-widest mb-8">/Features</p>
+          </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.features.map((feature, idx) => (
               <AnimatedSection 
                 key={feature.title} 
                 direction="bottom" 
-                delay={idx * 100}
+                delay={400 + (idx * 100)}
                 className="bg-[#161616]/80 border border-white/5 hover:border-white/10 p-6 rounded-xl transition-all duration-300 text-left group"
               >
                 <div className="w-10 h-10 rounded-lg bg-[#27272a]/30 border border-white/5 flex items-center justify-center mb-5 group-hover:border-white/20 transition-all">
@@ -403,7 +404,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </section>
 
         {/* Call to Action */}
-        <section className="text-center py-12 border-t border-white/10">
+        <AnimatedSection as="section" direction="bottom" delay={600} className="text-center py-12 border-t border-white/10">
           <h2 className="text-3xl md:text-4xl text-white mb-8 font-bold tracking-tight">
             Interessado no código?
           </h2>
@@ -423,47 +424,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               Voltar ao Portfólio
             </Link>
           </div>
-        </section>
+        </AnimatedSection>
       </main>
-
-      {/* Footer */}
-      <footer className="w-full py-10 px-6 bg-[#0a0a0a] border-t border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
-          <span className="text-xs font-mono uppercase tracking-widest text-zinc-500">{project.title}</span>
-          <p className="text-xs text-zinc-500 opacity-80">© 2026 Matheus Sestare. Built with precision.</p>
-          <div className="flex gap-4">
-            <a 
-              className="text-xs text-zinc-500 hover:text-white transition-colors" 
-              href={project.githubUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-            <Link className="text-xs text-zinc-500 hover:text-white transition-colors" href="/">Home</Link>
-          </div>
-        </div>
-      </footer>
-
-      {/* Floating Navigation Pill */}
-      <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center p-1.5 gap-1.5 bg-[#161616]/80 backdrop-blur-md border border-white/10 rounded-full shadow-2xl scale-95 active:scale-90 transition-transform">
-        <Link 
-          className="text-zinc-500 hover:text-white hover:bg-white/5 rounded-full p-2.5 transition-all flex items-center justify-center" 
-          href="/"
-          title="Home"
-        >
-          <span className="material-symbols-outlined text-lg">grid_view</span>
-        </Link>
-        <a 
-          className="text-zinc-500 hover:text-white hover:bg-white/5 rounded-full p-2.5 transition-all flex items-center justify-center" 
-          href={project.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub Code"
-        >
-          <span className="material-symbols-outlined text-lg">code</span>
-        </a>
-      </nav>
     </div>
   );
 }

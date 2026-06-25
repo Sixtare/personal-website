@@ -7,21 +7,23 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-start py-20 px-4 md:px-0 w-full">
       <main className="w-full max-w-5xl mx-auto space-y-12 mb-32" data-purpose="portfolio-container">
-        <AnimatedSection as="header" className="flex flex-col items-center text-center space-y-6 mb-16" dataPurpose="profile-section" direction="top" delay={0}>
-          <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-accent-gray shadow-xl">
-            <img 
-              alt="Avatar" 
-              className="w-full h-full object-cover" 
-              src="/picture.webp" 
-            />
+        <AnimatedSection as="header" className="w-full mb-16 text-center" dataPurpose="profile-section" direction="top" delay={200}>
+          <div className="flex flex-col items-center space-y-6">
+            <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-accent-gray shadow-xl">
+              <img 
+                alt="Avatar" 
+                className="w-full h-full object-cover" 
+                src="/picture.webp" 
+              />
+            </div>
+            <AnimatedTitle />
           </div>
-          <AnimatedTitle />
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start px-4 md:px-4">
           {/* LEFT COLUMN */}
           <div className="lg:col-span-7 space-y-16">
-            <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="about-section" direction="left" delay={200}>
+            <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="about-section" direction="left" delay={300}>
               <div className="label-column">/about</div>
               <div className="flex-1 space-y-4 text-text-dim leading-relaxed">
                 <p>Estudante de engenharia de software na UNIASSELVI, curioso e apaixonado por&nbsp;<span className="tag-pill bg-accent-gray">Tecnologia</span>&nbsp;,<span className="tag-pill bg-accent-gray">Jogos</span>&nbsp;e&nbsp;<span className="tag-pill bg-accent-gray">IA</span>&nbsp;.</p>
@@ -29,7 +31,7 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="projects-section" direction="bottom" delay={600}>
+            <AnimatedSection className="flex flex-col md:flex-row gap-4" dataPurpose="projects-section" direction="bottom" delay={400}>
               <div className="label-column">/projects</div>
               <div className="flex-1 space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -130,7 +132,7 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            <AnimatedSection className="flex flex-col gap-4" dataPurpose="educacao-section" direction="right" delay={700}>
+            <AnimatedSection className="flex flex-col gap-4" dataPurpose="educacao-section" direction="right" delay={600}>
               <div className="label-column">/education</div>
               <div className="bg-card-bg border border-card-border rounded-xl p-6 space-y-6">
                 <div>

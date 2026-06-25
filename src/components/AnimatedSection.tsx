@@ -22,40 +22,51 @@ export default function AnimatedSection({
 }: AnimatedSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
+  let initialTransform = "";
+  switch (direction) {
+    case "left":
+      initialTransform = "translateX(-50px)";
+      break;
+    case "right":
+      initialTransform = "translateX(50px)";
+      break;
+    case "top":
+      initialTransform = "translateY(-50px)";
+      break;
+    case "bottom":
+      initialTransform = "translateY(50px)";
+      break;
+  }
+
   useEffect(() => {
-    let translateX = 0;
-    let translateY = 0;
-
-    switch (direction) {
-      case "left":
-        translateX = -50;
-        break;
-      case "right":
-        translateX = 50;
-        break;
-      case "top":
-        translateY = -50;
-        break;
-      case "bottom":
-        translateY = 50;
-        break;
-    }
-
-    anime({
+    const animConfig: any = {
       targets: sectionRef.current,
-      translateX: [translateX, 0],
-      translateY: [translateY, 0],
       opacity: [0, 1],
       easing: "easeOutExpo",
       duration: 1000,
       delay: delay,
-    });
+    };
+
+    if (direction === "left" || direction === "right") {
+      const startX = direction === "left" ? -50 : 50;
+      animConfig.translateX = [startX, 0];
+    } else {
+      const startY = direction === "top" ? -50 : 50;
+      animConfig.translateY = [startY, 0];
+    }
+
+    anime(animConfig);
   }, [direction, delay]);
 
   return (
     <Tag 
       ref={sectionRef} 
-      className={`opacity-0 ${className}`}
+      className={className}
+      style={{
+        opacity: 0,
+        transform: initialTransform,
+        willChange: "transform, opacity"
+      }}
       data-purpose={dataPurpose}
     >
       {children}
