@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect } from "react";
+import { use, useEffect, useState } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { projects } from "../../../data/projects";
@@ -17,6 +17,25 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   if (!project) {
     notFound();
   }
+
+  const [leftPosition, setLeftPosition] = useState<string>("1rem");
+
+  // Dynamically calculate the left position of the back button to center it in the left margin
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width >= 1200) {
+        const calculated = (width - 1152) / 4 + 16;
+        setLeftPosition(`${calculated}px`);
+      } else {
+        setLeftPosition("1rem");
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Set page title dynamically on the client side
   useEffect(() => {
@@ -41,21 +60,24 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <div className="min-h-screen bg-[#121214] text-[#e5e2e1] font-sans selection:bg-white selection:text-black">
-      {/* Floating Back Button */}
-      <div className="fixed top-6 left-6 md:left-6 z-50">
+      {/* Center Left Back Button */}
+      <div
+        className="fixed top-1/2 -translate-y-1/2 z-50 transition-[left] duration-300"
+        style={{ left: leftPosition }}
+      >
         <AnimatedSection
           direction="left"
           delay={100}
         >
           <Link
             href="/"
-            className="flex items-center gap-2 px-4 h-10 rounded-full bg-black/60 border border-white/10 text-white backdrop-blur-md hover:bg-white/15 hover:border-white/20 transition-all duration-300 group shadow-lg"
+            className="group flex items-center justify-center w-12 h-12 rounded-full border border-card-border bg-dark-bg/80 backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-card-bg shadow-lg"
+            aria-label="Voltar para a página principal"
             title="Voltar para a página principal"
           >
-            <span className="material-symbols-outlined text-lg transition-transform duration-300 group-hover:-translate-x-0.5">
+            <span className="material-symbols-outlined text-text-dim group-hover:text-white transition-transform duration-300 group-hover:-translate-x-1 text-2xl">
               arrow_back
             </span>
-            <span className="text-sm font-medium tracking-wide">Voltar</span>
           </Link>
         </AnimatedSection>
       </div>
@@ -137,27 +159,41 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             ))}
           </div>
         </section>
-
         {/* Call to Action */}
         <AnimatedSection as="section" direction="bottom" delay={600} className="text-center py-12 border-t border-white/10">
           <h2 className="text-3xl md:text-4xl text-white mb-8 font-bold tracking-tight">
-            Interessado no código?
+            Interessado no projeto?
           </h2>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 transition-colors text-sm"
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub Repository
-            </a>
-            <Link
-              className="px-6 py-3 bg-transparent border border-white/10 text-white font-semibold rounded-lg hover:bg-white/5 transition-colors text-sm"
-              href="/"
-            >
-              Voltar ao Portfólio
-            </Link>
+            {project.demoUrl ? (
+              <>
+                <a
+                  className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 transition-colors text-sm"
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visitar Site
+                </a>
+                <a
+                  className="px-6 py-3 bg-transparent border border-white/10 text-white font-semibold rounded-lg hover:bg-white/5 transition-colors text-sm"
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Repositório no Github
+                </a>
+              </>
+            ) : (
+              <a
+                className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-zinc-200 transition-colors text-sm"
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Repositório no Github
+              </a>
+            )}
           </div>
         </AnimatedSection>
       </main>

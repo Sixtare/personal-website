@@ -29,6 +29,7 @@ export const projects: Record<string, ProjectData> = {
     role: "Full Stack Developer",
     stack: ["Java 25", "Spring Boot 4.0.6", "PostgreSQL", "Next.js 16.2.6", "TypeScript 5", "Tailwind CSS 4", "Docker", "Steam Web API", "SteamSpy API", "Kaggle Dataset"],
     githubUrl: "https://github.com/Sixtare/steam-stats",
+    demoUrl: "https://steamstats.sestare.dev/",
     heroType: "steam-stats",
     imageUrl: "/steamstats.png",
     features: [
